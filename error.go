@@ -5,13 +5,14 @@ import (
 
 	"github.com/designsbysm/logger/v2"
 	"github.com/gin-gonic/gin"
+	"github.com/spf13/viper"
 )
 
 func Error() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Next()
 
-		if gin.IsDebugging() {
+		if !viper.GetBool("gin.release") {
 			return
 		}
 
