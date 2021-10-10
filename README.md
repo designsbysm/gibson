@@ -1,3 +1,3 @@
 # Gin Middleware
 
-Go Gin middleware for designsbysm/goserver HTTP server prototype.
+Go Gin middleware for github.com/designsbysm/goserver HTTP server prototype.
