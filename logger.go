@@ -19,6 +19,6 @@ func Logger() gin.HandlerFunc {
 		}
 
 		latency := time.Since(now)
-		logger.Write(logger.LevelInfo, c.Writer.Status(), c.Request.Method, c.Request.URL, latency.Round(time.Millisecond))
+		logger.Info(c.Writer.Status(), c.Request.Method, c.Request.URL, latency.Round(time.Millisecond))
 	}
 }

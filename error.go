@@ -20,7 +20,7 @@ func Error() gin.HandlerFunc {
 			message := strings.Join(c.Errors.Errors(), "; ")
 			message = strings.Replace(message, "ERROR: ", "", -1)
 
-			logger.Write(logger.LevelError, message)
+			logger.Error(message)
 
 			c.JSON(0, gin.H{
 				"error": message,
