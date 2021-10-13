@@ -5,7 +5,6 @@ import (
 
 	"github.com/designsbysm/logger/v2"
 	"github.com/gin-gonic/gin"
-	"github.com/spf13/viper"
 )
 
 func Logger() gin.HandlerFunc {
@@ -14,7 +13,7 @@ func Logger() gin.HandlerFunc {
 
 		c.Next()
 
-		if !viper.GetBool("gin.release") {
+		if gin.IsDebugging() {
 			return
 		}
 
