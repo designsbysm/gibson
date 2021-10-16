@@ -1,4 +1,4 @@
-package ginmiddleware
+package gibson
 
 import (
 	"time"

@@ -1,4 +1,4 @@
-module github.com/designsbysm/ginmiddleware
+module github.com/designsbysm/gibson
 
 go 1.17
 
