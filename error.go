@@ -3,7 +3,7 @@ package gibson
 import (
 	"strings"
 
-	"github.com/designsbysm/logger/v2"
+	"github.com/designsbysm/timber/v2"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
@@ -20,7 +20,7 @@ func Error() gin.HandlerFunc {
 			message := strings.Join(c.Errors.Errors(), "; ")
 			message = strings.Replace(message, "ERROR: ", "", -1)
 
-			logger.Error(message)
+			timber.Error(message)
 
 			c.JSON(0, gin.H{
 				"error": message,

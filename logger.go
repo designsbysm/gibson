@@ -3,11 +3,11 @@ package gibson
 import (
 	"time"
 
-	"github.com/designsbysm/logger/v2"
+	"github.com/designsbysm/timber/v2"
 	"github.com/gin-gonic/gin"
 )
 
-func Logger() gin.HandlerFunc {
+func logger() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		now := time.Now()
 
@@ -18,6 +18,6 @@ func Logger() gin.HandlerFunc {
 		}
 
 		latency := time.Since(now)
-		logger.Info(c.Writer.Status(), c.Request.Method, c.Request.URL, latency.Round(time.Millisecond))
+		timber.Info(c.Writer.Status(), c.Request.Method, c.Request.URL, latency.Round(time.Millisecond))
 	}
 }
