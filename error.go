@@ -12,7 +12,7 @@ func Error() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Next()
 
-		if !viper.GetBool("gin.release") {
+		if gin.IsDebugging() {
 			return
 		}
 
