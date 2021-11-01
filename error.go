@@ -5,7 +5,6 @@ import (
 
 	"github.com/designsbysm/timber/v2"
 	"github.com/gin-gonic/gin"
-	"github.com/spf13/viper"
 )
 
 func Error() gin.HandlerFunc {
